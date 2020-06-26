@@ -26,13 +26,19 @@ class ViewController: UIViewController {
         yellow.alpha = CGFloat(pale)
         green.alpha = CGFloat(pale)
         showButton.layer.cornerRadius = 10
+      
         // Do any additional setup after loading the view.
     }
-
+    override func viewDidLayoutSubviews (){
+      
+        red.layer.cornerRadius = red.frame.size.width/2
+        yellow.layer.cornerRadius = red.frame.size.width/2
+        green.layer.cornerRadius = red.frame.size.width/2
+    }
     
     @IBAction func ShowButtonPress() {
         showButton.setTitle("Next", for: .normal)
-
+      
         if step == 1 {
             green.alpha = CGFloat(pale)
             red.alpha = CGFloat(bright)
